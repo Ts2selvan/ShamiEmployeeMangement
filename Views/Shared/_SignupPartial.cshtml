@@ -1,0 +1,45 @@
+﻿@model ShamiEmployeeMangement.Models.DTO.SignupDTO
+
+<form id="signupForm" method="post">
+    <div>
+        <label>Username:</label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label>Confirm Password:</label>
+        <input asp-for="Confirmpassword" type="password" />
+        <span asp-validation-for="Confirmpassword"></span>
+    </div>
+    <button type="submit">Sign Up</button>
+</form>
+<div id="signupResult"></div>
+
+<script>
+    $(document).ready(function () {
+        $("#signupForm").submit(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                url: '@Url.Action("Signup", "Account")',
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function (result) {
+                    if (result.success) {
+                        $("#signupResult").html("Signup successful!");
+                    } else {
+                        $("#signupResult").html("Signup failed!");
+                    }
+                },
+                error: function () {
+                    $("#signupResult").html("Error in processing your request.");
+                }
+            });
+        });
+    });
+</script>

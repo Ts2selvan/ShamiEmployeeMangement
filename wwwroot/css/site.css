@@ -1,0 +1,75 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* CSS for Signup View */
+#signupContainer {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#signupForm div {
+    margin-bottom: 15px;
+}
+
+#signupForm label {
+    display: block;
+    font-weight: bold;
+}
+
+#signupForm input[type="text"],
+#signupForm input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#signupForm button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    #signupForm button:hover {
+        background-color: #0056b3;
+    }
+
+#signupResult {
+    margin-top: 15px;
+    font-weight: bold;
+}
+/* Styles for validation error messages */
+.validation-message {
+    color: red;
+}
+
+/* Styles for input fields with validation errors */
+input.input-validation-error {
+    border: 2px solid red;
+}
